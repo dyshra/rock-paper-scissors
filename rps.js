@@ -1,3 +1,5 @@
+let playerScore = 0;
+let computerScore = 0;
 function computerPlay()
 {
     let randomNum = Math.random();
@@ -9,6 +11,15 @@ function computerPlay()
         return "Scissors";
 }
 
+function initialState(v=0)
+{
+        document.getElementById('result').innerHTML = "";
+        document.getElementById('winner').innerHTML = "";
+        document.getElementById('score').innerHTML = "";
+
+    computerScore = playerScore = 0;
+}
+
 function singleRound(e)
 {
     let rockReg=/rock/i;
@@ -16,23 +27,27 @@ function singleRound(e)
     let scissorsReg=/scissors/i;
     let computerSelection = computerPlay();
     const result= document.getElementById('result');
+    const score= document.getElementById('score');
+    document.getElementById('winner').innerHTML = "";
+    score.innerHTML="";
 
     if (rockReg.test(e.target.id))
     {
         if (computerSelection === "Rock")
         {   
-            result.innerText = "It's a Tie!";
-            return 0;
+            result.innerText = "Rock vs rock";
+            
         }
         else if (computerSelection === "Paper")
         {
-            result.innerText = "You lose! Paper beats Rock";
-            return -1;
+            result.innerText = "Paper beats Rock";
+            ++computerScore;
+            
         }
         else if (computerSelection === "Scissors")
         {
-            result.innerText = "You win! Rock beats Scissors";
-            return 1;
+            result.innerText = "Rock beats Scissors";
+            ++playerScore;
         }
     }
 
@@ -40,18 +55,18 @@ function singleRound(e)
     {
         if (computerSelection === "Rock")
         {    
-            result.innerText = "You win! Paper beats Rock";
-            return 1;
+            result.innerText = "Paper beats Rock";
+            ++playerScore;
         }        
         else if (computerSelection === "Paper")
         {            
-            result.innerText = "It's a Tie!";
-            return 0;
+            result.innerText = "Paper vs paper";
+            
         }        
         else if (computerSelection === "Scissors")
         {                
-            result.innerText = "You lose! Scissors beat Paper";
-            return -1;
+            result.innerText = "Scissors beat Paper";
+            ++computerScore;
         }    
     }
 
@@ -59,26 +74,39 @@ function singleRound(e)
     {
         if (computerSelection === "Rock")
         {            
-            result.innerText = "You lose! Rock beats Scissors";
-            return -1;
+            result.innerText = "Rock beats Scissors";
+            ++computerScore;
         }        
         else if (computerSelection === "Paper")
         {            
-            result.innerText = "You win! Scissors beat Paper";
-            return 1;
+            result.innerText = "Scissors beat Paper";
+            ++playerScore;
         }        
         else if (computerSelection === "Scissors")
         {            
-            result.innerText = "It's a Tie!";
-            return 0;
+            result.innerText = "scissors vs scissors";
+            
         }    
     }
-    else
+    score.innerHTML= "player score: "+playerScore+"<br>computer score: "+computerScore;
+    if (playerScore === 5 && computerScore !== 5)
     {
-        result.innerText = "Please enter one of the options";
-        return -2;
+        document.getElementById('winner').innerHTML = "You win this match!";
+        computerScore = playerScore = 0;
+
     }
+    else if (computerScore === 5 && playerScore !== 5)
+    {
+        document.getElementById('winner').innerHTML = "You lost this match";
+        computerScore = playerScore = 0;
+    }
+    
 }
 
-const button_arr = document.querySelectorAll('button')
-button_arr.forEach(button => button.addEventListener('click', singleRound))
+const button_arr = document.querySelectorAll('.hand')
+button_arr.forEach(
+    button => button.addEventListener('click', singleRound)
+)
+document.querySelector("#newgame").addEventListener('click', initialState);
+
+
