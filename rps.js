@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+
 function computerPlay()
 {
     let randomNum = Math.random();
@@ -33,6 +34,9 @@ function singleRound(e)
 
     const p_score= document.getElementById('p-score');
     const c_score= document.getElementById('c-score');
+
+    document.getElementById('winner').innerHTML = "";
+
 
     if (rockReg.test(e.target.id))
     {
@@ -98,6 +102,7 @@ function singleRound(e)
     if (playerScore === 5 && computerScore !== 5)
     {
         document.getElementById('winner').innerHTML = "You win this match!";
+        document.getElementById('newgame').innerHTML="Play again";
         computerScore = playerScore = 0;
 
     }
@@ -109,12 +114,14 @@ function singleRound(e)
     
 }
 
+
 initialState();
 document.querySelector("#newgame").addEventListener('click', initialState);
 const button_arr = document.querySelectorAll('.hand')
 button_arr.forEach(
     button => button.addEventListener('click', singleRound)
 )
+
 
 
 
