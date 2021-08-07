@@ -2,16 +2,61 @@
 <html>
     <head>
         <title>Rock, paper, scissors!</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <button id='newgame'>New game</button>
-        <div class='buttons'>
-            <button id='rock' class='hand'>Rock</button>
-            <button id='paper' class='hand'>Paper</button>
-            <button id='scissors' class='hand'>Scissors</button>
+        <div class='rps-heading'>
+            <div class='rps-border-1'>
+                <div class='rps-border-3'>
+                    <div class='rps-border-2'>Rock, Paper & Scissors!</div>
+                </div>
+            </div>
+            
         </div>
-        <div id='result'></div>
-        <div id='score'></div>
+        <div class='newgame-heading'>
+            <div class='ng-border-1'>
+                <div class='ng-border-3'>
+                    <a href=# id='newgame' class="ng-border-2">New game</a>
+                </div>
+            </div>
+        
+        </div>
+        <div class='buttons'>
+            <div class="rock-border-1">
+                <div class="rock-border-3">
+                    <div id='rock' class='hand'>Rock</div>
+                </div>
+            </div>
+            <div class="paper-border-1">
+                <div class="paper-border-3">
+                    <div id='paper' class='hand'>Paper</div>
+                </div>
+            </div>
+            <div class="scissors-border-1">
+                <div class="scissors-border-3">
+                    <div id='scissors' class='hand'>Scissors</div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="icons">
+            <span class="material-icons md-32">
+                face
+            </span>
+            <span class="material-icons md-32">
+                computer
+            </span>
+        </div>
+
+        <div class=versus>
+            <div id='result-1'></div>
+            <div id='result-2'></div>
+        </div>
+        <div class=score>
+            <div id='p-score'></div>
+            <div id='c-score'></div>
+        </div>
         <div id='winner'></div>
     </body>
     <script type="text/javascript" src="rps.js"></script>

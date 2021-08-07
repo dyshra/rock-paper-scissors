@@ -1,0 +1,147 @@
+*{
+    background-color: black;
+}
+.rps-heading{
+    display:flex;
+    justify-content:center;
+    margin: 40px 0 40px 0;
+}
+.rps-border-1, .rps-border-3{
+    border: 2px solid rgb(240, 95, 95);
+    height: 50px;
+    width: 500px;
+    border-radius:5px;
+    background-color: transparent;
+}
+.rps-border-1{
+}
+
+.rps-border-2{
+    margin-bottom: 9px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: white;
+    
+}
+.rps-border-3{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-left: 7px;
+    margin-top:7px;
+}
+
+.newgame-heading{
+    display:flex;
+    justify-content:center;
+    margin: 40px 0 40px 0;
+}
+.ng-border-1, .ng-border-3{
+    border: 2px solid rgb(240, 95, 95);
+    height: 50px;
+    width: 150px;
+    border-radius:5px;
+    background-color: transparent;
+}
+.rps-border-1{
+}
+
+.ng-border-2{
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 100;
+    font-size: 1em;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding-bottom: 9px;
+    border-radius: 5px;;
+}
+.ng-border-3{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-left: 7px;
+    margin-top:7px;
+}
+#newgame:hover{
+    background-color: white;
+    color: black;
+    padding:0;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 150px;
+}
+
+.rock-border-1, .rock-border-3, .paper-border-1, .paper-border-3,.scissors-border-1, .scissors-border-3{
+    border: 2px solid white;
+    height: 150px;
+    width: 150px;
+    border-radius:5px;
+    background-color: transparent;
+}
+
+.rock-border-3, .paper-border-3, .scissors-border-3{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-left: 7px;
+    margin-top:7px;
+}
+
+.hand{
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    height:100%;
+    width:100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hand:hover{
+    cursor: pointer;
+    background-color:  white;
+    color: black;
+}
+.icons{
+    display:flex;
+    justify-content: space-evenly;
+    margin: 50px 200px 10px 200px;;
+}
+.material-icons.md-32{
+    color: white;
+    font-size: 50px;
+    opacity: 0.9;
+}
+
+.versus, .score{
+    display:flex;
+    justify-content: space-evenly;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px 190px 5px 190px;
+}
+
+#result-1, #result-2, #p-score, #c-score{
+    color:white;
+    display: inline;
+}
+
+
+#winner{
+    color:white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace
+}
+
+
+

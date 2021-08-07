@@ -13,9 +13,11 @@ function computerPlay()
 
 function initialState(v=0)
 {
-        document.getElementById('result').innerHTML = "";
-        document.getElementById('winner').innerHTML = "";
-        document.getElementById('score').innerHTML = "";
+        document.getElementById('result-1').innerHTML = "";
+        document.getElementById('result-2').innerHTML = "";
+        document.getElementById('winner').innerHTML = "First one to score 5 points, wins!";
+        document.getElementById('p-score').innerHTML = "";
+        document.getElementById('c-score').innerHTML = "";
 
     computerScore = playerScore = 0;
 }
@@ -26,69 +28,73 @@ function singleRound(e)
     let paperReg=/paper/i;
     let scissorsReg=/scissors/i;
     let computerSelection = computerPlay();
-    const result= document.getElementById('result');
-    const score= document.getElementById('score');
-    document.getElementById('winner').innerHTML = "";
-    score.innerHTML="";
+    const result_1= document.getElementById('result-1');
+    const result_2= document.getElementById('result-2');
+
+    const p_score= document.getElementById('p-score');
+    const c_score= document.getElementById('c-score');
 
     if (rockReg.test(e.target.id))
     {
+        result_1.innerHTML = "Rock"
         if (computerSelection === "Rock")
         {   
-            result.innerText = "Rock vs rock";
+            result_2.innerHTML = "Rock";
             
         }
         else if (computerSelection === "Paper")
         {
-            result.innerText = "Paper beats Rock";
+            result_2.innerHTML = "Paper";
             ++computerScore;
             
         }
         else if (computerSelection === "Scissors")
         {
-            result.innerText = "Rock beats Scissors";
+            result_2.innerHTML = "Scissors";
             ++playerScore;
         }
     }
 
     else if (paperReg.test(e.target.id))
     {
+        result_1.innerHTML = "Paper";
         if (computerSelection === "Rock")
         {    
-            result.innerText = "Paper beats Rock";
+            result_2.innerHTML = "Rock";
             ++playerScore;
         }        
         else if (computerSelection === "Paper")
         {            
-            result.innerText = "Paper vs paper";
-            
+            result_2.innerHTML = "Paper";            
         }        
         else if (computerSelection === "Scissors")
         {                
-            result.innerText = "Scissors beat Paper";
+            result_2.innerHTML = "Scissors";
             ++computerScore;
         }    
     }
 
     else if (scissorsReg.test(e.target.id))
     {
+        result_1.innerHTML = "Scissors";
         if (computerSelection === "Rock")
         {            
-            result.innerText = "Rock beats Scissors";
+            result_2.innerHTML = "Rock";
             ++computerScore;
         }        
         else if (computerSelection === "Paper")
         {            
-            result.innerText = "Scissors beat Paper";
+            result_2.innerHTML = "Paper";
             ++playerScore;
         }        
         else if (computerSelection === "Scissors")
         {            
-            result.innerText = "scissors vs scissors";
+            result_2.innerHTML = "Scissors";
             
         }    
     }
-    score.innerHTML= "player score: "+playerScore+"<br>computer score: "+computerScore;
+    p_score.innerHTML= playerScore;
+    c_score.innerHTML=computerScore;
     if (playerScore === 5 && computerScore !== 5)
     {
         document.getElementById('winner').innerHTML = "You win this match!";
@@ -103,10 +109,12 @@ function singleRound(e)
     
 }
 
+initialState();
+document.querySelector("#newgame").addEventListener('click', initialState);
 const button_arr = document.querySelectorAll('.hand')
 button_arr.forEach(
     button => button.addEventListener('click', singleRound)
 )
-document.querySelector("#newgame").addEventListener('click', initialState);
+
 
 
