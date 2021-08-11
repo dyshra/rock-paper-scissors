@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 
+
 function computerPlay()
 {
     let randomNum = Math.random();
@@ -114,7 +115,18 @@ function singleRound(e)
     
 }
 
-
+window.onload = function(){
+    document.querySelector('main').classList.add("disappear");
+    document.querySelector('.sg-1').classList.add("ng-border-1");
+    document.querySelector('.sg-2').classList.add("ng-border-2");
+    document.querySelector('.sg-3').classList.add("ng-border-3");
+    let loadGame = document.querySelector('.startGame');
+    loadGame.addEventListener('click', function(){
+        document.querySelector('.startpage').classList.add("disappear");
+        document.querySelector('.startpage').classList.remove("startpage");
+        document.querySelector('main').classList.remove("disappear");
+    });
+};
 initialState();
 document.querySelector("#newgame").addEventListener('click', initialState);
 const button_arr = document.querySelectorAll('.hand')

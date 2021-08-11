@@ -1,25 +1,21 @@
 *{
     background-color: black;
     font-family: 'Press Start 2P', cursive;
+    color: white;
 }
 
-.start{
-    width: 100%;
-    height: 100%;
-    background-color: black;
+.disappear{
+    display: none;
+}
+
+.startpage{
+    height: 100vh;
     display:flex;
     justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
-.start-rps{
-    font-size: 1.3em;
-    margin: 20px;
-}
-
-.start-game{
-    text-decoration: none;
-    margin: 20px;
-}
 .rps-heading{
     display:flex;
     justify-content:center;
@@ -87,7 +83,7 @@
     margin-left: 7px;
     margin-top:7px;
 }
-#newgame:hover{
+.ng-border-2:hover{
     background-color: rgb(240, 233, 233);
     color: black;
     padding:0;
