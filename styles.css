@@ -3,7 +3,9 @@
     font-family: 'Press Start 2P', cursive;
     color: white;
 }
-
+.appear{
+    display:block;
+}
 .disappear{
     display: none;
 }
@@ -11,11 +13,15 @@
 .startpage{
     height: 100vh;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
-
+.finalresult{
+    padding: 30px;
+    font-size: 20px;;
+}
 .rps-heading{
     display:flex;
     justify-content:center;
@@ -23,7 +29,7 @@
 }
 .rps-border-1, .rps-border-3{
     border: 2px solid rgb(240, 95, 95);
-    height: 50px;
+    height: 80px;
     width: 700px;
     border-radius:5px;
     background-color: transparent;
@@ -49,7 +55,7 @@
 .newgame-heading{
     display:flex;
     justify-content:center;
-    margin: 40px 0 40px 0;
+    margin: 50px 0 60px 0;
 }
 .ng-border-1, .ng-border-3{
     border: 2px solid rgb(240, 95, 95);

@@ -1,6 +1,27 @@
 let playerScore = 0;
 let computerScore = 0;
 
+function loadStartPage(){
+    document.querySelector('main').style.display = "none";
+    document.querySelector('.sg-1').classList.add("ng-border-1");
+    document.querySelector('.sg-2').classList.add("ng-border-2");
+    document.querySelector('.sg-3').classList.add("ng-border-3");
+}
+
+function loadGame(){
+    document.querySelector('.startpage').style.display="none";
+    document.querySelector(".startGame").style.display="none";
+    document.querySelector('main').style.display="block";
+}
+
+function resultPage(result){
+    
+    document.querySelector('main').style.display="none";
+    document.querySelector('.startpage').style.display="flex";
+    document.querySelector(".startGame").style.display="flex";
+    document.querySelector(".finalresult").innerHTML=result;
+    document.querySelector(".sg-2").innerHTML="Play again";
+}
 
 function computerPlay()
 {
@@ -23,6 +44,7 @@ function initialState(v=0)
 
     computerScore = playerScore = 0;
 }
+
 
 function singleRound(e)
 {
@@ -102,31 +124,19 @@ function singleRound(e)
     c_score.innerHTML=computerScore;
     if (playerScore === 5 && computerScore !== 5)
     {
-        document.getElementById('winner').innerHTML = "You win this match!";
-        document.getElementById('newgame').innerHTML="Play again";
         computerScore = playerScore = 0;
-
+        resultPage("You win this match!");
     }
     else if (computerScore === 5 && playerScore !== 5)
     {
-        document.getElementById('winner').innerHTML = "You lost this match";
         computerScore = playerScore = 0;
+        resultPage("You lost this match :(");
     }
     
 }
 
-window.onload = function(){
-    document.querySelector('main').classList.add("disappear");
-    document.querySelector('.sg-1').classList.add("ng-border-1");
-    document.querySelector('.sg-2').classList.add("ng-border-2");
-    document.querySelector('.sg-3').classList.add("ng-border-3");
-    let loadGame = document.querySelector('.startGame');
-    loadGame.addEventListener('click', function(){
-        document.querySelector('.startpage').classList.add("disappear");
-        document.querySelector('.startpage').classList.remove("startpage");
-        document.querySelector('main').classList.remove("disappear");
-    });
-};
+window.onload = loadStartPage;
+document.querySelector('.startGame').addEventListener('click', loadGame);
 initialState();
 document.querySelector("#newgame").addEventListener('click', initialState);
 const button_arr = document.querySelectorAll('.hand')
