@@ -12,6 +12,7 @@ function loadGame(){
     document.querySelector('.startpage').style.display="none";
     document.querySelector(".startGame").style.display="none";
     document.querySelector('main').style.display="block";
+    initialState();
 }
 
 function resultPage(result){
@@ -137,7 +138,6 @@ function singleRound(e)
 
 window.onload = loadStartPage;
 document.querySelector('.startGame').addEventListener('click', loadGame);
-initialState();
 document.querySelector("#newgame").addEventListener('click', initialState);
 const button_arr = document.querySelectorAll('.hand')
 button_arr.forEach(

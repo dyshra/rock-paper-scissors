@@ -34,8 +34,7 @@
     border-radius:5px;
     background-color: transparent;
 }
-.rps-border-1{
-}
+
 
 .rps-border-2{
     margin-bottom: 9px;
@@ -64,8 +63,7 @@
     border-radius:5px;
     background-color: transparent;
 }
-.rps-border-1{
-}
+
 
 .ng-border-2{
     font-weight: 100;
@@ -104,7 +102,7 @@ border-color: rgb(240, 228, 224);
 .buttons{
     display: flex;
     justify-content: space-evenly;
-    margin: 40px 150px;
+    margin: 40px 250px;
 }
 
 .rock-border-1, .rock-border-3, .paper-border-1, .paper-border-3,.scissors-border-1, .scissors-border-3{
@@ -171,5 +169,62 @@ border-color: rgb(240, 228, 224);
     text-align: center;
 }
 
+@media (max-width: 1024px){
+    .rps-heading{
+    margin: 10vh 70px 5vh 70px;;
+    }
+
+    .rps-border-1, .rps-border-3{
+    height: 10vh;
+    width: 95vw;
+    }
+
+    .rps-border-2{
+        font-size: 3.9vw;
+    }
+
+    .newgame-heading{
+    margin: 3vh 0 3vh 0;
+    }
+
+    .ng-border-1, .ng-border-3{
+    height: 4vh;
+    width: 15vh;
+    }
+
+    .ng-border-2{
+    font-weight: 100;
+    font-size: 1.0rem;
+    }
+
+    .buttons{
+    margin: 7vh 0px 100px 0px;
+    }
+
+    .rock-border-1, .rock-border-3, .paper-border-1, .paper-border-3,.scissors-border-1, .scissors-border-3{
+    height: 250px;
+    width: 250px;
+    }
+
+    .material-icons.md-32{
+    font-size: 5.5vh;
+    }
+
+    .icons{
+    margin: 6vh 1vh 0 1vh;;
+    }
+
+    .versus, .score{
+        margin: 3vh 1vh 0 1vh;
+
+    }
+    #result-1, #result-2, #p-score, #c-score, .finalresult{
+    font-size: 1.5vh;
+    }
+    #winner{
+        font-size: 1vh;
+    }
+
+}
 
 
